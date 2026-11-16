@@ -1,0 +1,15 @@
+/* Oficina — grafite + amarelo de segurança, industrial */
+:root{
+  --bg:#ffffff; --bg-alt:#f1f2f4; --texto:#16181d; --texto-suave:#555b66;
+  --primaria:#f5b301; --primaria-texto:#16181d; --destaque:#d99a00;
+  --hero-bg:linear-gradient(135deg,#16181d 0%,#2c313b 100%); --hero-texto:#fff; --hero-overlay:rgba(15,17,22,.72);
+  --borda:rgba(0,0,0,.09); --card:#fff; --raio:4px; --raio-btn:4px;
+  --fonte-titulo:'Barlow Condensed',sans-serif; --fonte-texto:'Barlow',system-ui,sans-serif;
+  --peso-titulo:800; --caixa-titulo:uppercase; --espaco-titulo:.01em;
+}
+.hero{border-bottom:8px solid var(--primaria)}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem)}
+.card{border-top:4px solid var(--primaria)}
+.card-num{font-size:1.6rem;color:#c9ccd2}
+.cta-final{background:repeating-linear-gradient(-45deg,#f5b301 0 26px,#e8a900 26px 52px)}
+.cta-final .btn-pri{background:#16181d;color:#fff}

@@ -1,0 +1,23 @@
+{
+  "nome": "Restaurante / lanchonete",
+  "fontes": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;500;600&display=swap",
+  "heroTitulo": "Comida feita com carinho, do jeito que você gosta",
+  "heroSubtitulo": "Sabor caprichado, ingredientes selecionados e um lugar gostoso de estar. Venha nos visitar ou peça pelo WhatsApp.",
+  "sobreTitulo": "Uma cozinha com história e sabor",
+  "sobreTexto": [
+    "Cada prato sai da nossa cozinha preparado com cuidado, ingredientes frescos e muito sabor.",
+    "Seja para um almoço rápido, um encontro com a família ou aquele pedido no fim do dia, a casa é sua."
+  ],
+  "menuServicos": "Cardápio",
+  "servicosSobretitulo": "Destaques da casa",
+  "servicosTitulo": "O que você encontra aqui",
+  "servicos": [
+    {"titulo": "Pratos da casa", "descricao": "As receitas que nossos clientes mais pedem, preparadas na hora."},
+    {"titulo": "Opções do dia", "descricao": "Sugestões variadas para você nunca enjoar."},
+    {"titulo": "Bebidas e sobremesas", "descricao": "Para acompanhar e fechar a refeição com chave de ouro."},
+    {"titulo": "Pedidos pelo WhatsApp", "descricao": "Faça seu pedido de forma rápida e prática."}
+  ],
+  "botaoTexto": "Fazer pedido",
+  "mensagemWhatsapp": "Olá! Vi o site e gostaria de fazer um pedido.",
+  "ctaTitulo": "Bateu a fome? A gente resolve."
+}

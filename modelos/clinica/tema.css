@@ -1,0 +1,13 @@
+/* Clínica — claro, verde-água suave, serifa elegante */
+:root{
+  --bg:#ffffff; --bg-alt:#f2f8f7; --texto:#14302c; --texto-suave:#4f6764;
+  --primaria:#2a9d8f; --primaria-texto:#ffffff; --destaque:#2a9d8f;
+  --hero-bg:linear-gradient(160deg,#e6f4f1 0%,#cfe9e4 100%); --hero-texto:#14302c; --hero-overlay:rgba(9,40,36,.55);
+  --borda:rgba(20,48,44,.1); --card:#fff; --raio:22px; --raio-btn:999px;
+  --fonte-titulo:'DM Serif Display',serif; --peso-titulo:400; --caixa-titulo:none; --espaco-titulo:0;
+  --sombra:0 14px 40px rgba(20,48,44,.1);
+}
+.hero.com-foto{--hero-texto:#fff}
+.hero:not(.com-foto) .btn-sec{color:#14302c}
+.card-num{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#e6f4f1}
+.cta-final{background:linear-gradient(135deg,#2a9d8f,#1f7a70)}

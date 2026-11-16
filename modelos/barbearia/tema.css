@@ -1,0 +1,14 @@
+/* Barbearia — escuro, dourado, tipografia condensada */
+:root{
+  --bg:#121212; --bg-alt:#1a1a1a; --texto:#f5f5f4; --texto-suave:#a8a29e;
+  --primaria:#c9a24a; --primaria-texto:#121212; --destaque:#c9a24a;
+  --hero-bg:linear-gradient(135deg,#0d0d0d 0%,#2a2219 100%); --hero-texto:#fff; --hero-overlay:rgba(0,0,0,.66);
+  --borda:rgba(255,255,255,.09); --card:#1f1f1f; --raio:6px; --raio-btn:4px;
+  --fonte-titulo:'Oswald',sans-serif; --peso-titulo:700; --caixa-titulo:uppercase; --espaco-titulo:.02em;
+  --sombra:0 14px 34px rgba(0,0,0,.45);
+}
+.topo{background:rgba(18,18,18,.92)}
+.btn-sec.escuro{color:var(--texto)}
+.card{border-left:3px solid var(--primaria)}
+.cta-final{background:linear-gradient(135deg,#c9a24a,#a8812f)}
+.mapa iframe{filter:grayscale(.6) invert(.9) hue-rotate(180deg)}

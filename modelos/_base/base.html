@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITULO_PAGINA}}</title>
+<meta name="description" content="{{DESCRICAO}}">
+{{META_ROBOTS}}
+<meta property="og:title" content="{{TITULO_PAGINA}}">
+<meta property="og:description" content="{{DESCRICAO}}">
+<meta property="og:type" content="website">
+{{OG_IMAGEM}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{{FONTES_URL}}" rel="stylesheet">
+<style>
+{{CSS}}
+</style>
+</head>
+<body class="nicho-{{NICHO}}">
+{{FAIXA_DEMO}}
+
+<header class="topo">
+  <div class="container topo-in">
+    <a href="#inicio" class="marca">{{NOME}}</a>
+    <nav class="menu">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">{{MENU_SERVICOS}}</a>
+      {{MENU_AVALIACOES}}
+      <a href="#contato">Contato</a>
+    </nav>
+    {{BOTAO_TOPO}}
+  </div>
+</header>
+
+<section id="inicio" class="hero {{HERO_CLASSE}}" {{HERO_ESTILO}}>
+  <div class="container hero-in">
+    <span class="hero-tag">{{CATEGORIA}}{{CIDADE_TAG}}</span>
+    <h1>{{HERO_TITULO}}</h1>
+    <p class="hero-sub">{{HERO_SUBTITULO}}</p>
+    <div class="hero-acoes">
+      {{BOTAO_PRINCIPAL}}
+      <a class="btn btn-sec" href="{{LINK_ROTA}}" target="_blank" rel="noopener">Como chegar</a>
+    </div>
+    {{HERO_NOTA}}
+  </div>
+</section>
+
+<section id="sobre" class="secao sobre">
+  <div class="container sobre-in">
+    <div>
+      <span class="sobretitulo">Sobre nós</span>
+      <h2>{{SOBRE_TITULO}}</h2>
+      {{SOBRE_TEXTO}}
+    </div>
+    {{SOBRE_FOTO}}
+  </div>
+</section>
+
+<section id="servicos" class="secao servicos">
+  <div class="container">
+    <span class="sobretitulo">{{SERVICOS_SOBRETITULO}}</span>
+    <h2>{{SERVICOS_TITULO}}</h2>
+    <div class="cards">
+      {{SERVICOS}}
+    </div>
+  </div>
+</section>
+
+{{SECAO_GALERIA}}
+
+{{SECAO_AVALIACOES}}
+
+<section id="contato" class="secao contato">
+  <div class="container contato-in">
+    <div class="contato-info">
+      <span class="sobretitulo">Visite a gente</span>
+      <h2>Horário e localização</h2>
+      <p class="endereco">{{ENDERECO}}</p>
+      {{TELEFONE_LINHA}}
+      {{HORARIOS}}
+      <div class="hero-acoes">
+        {{BOTAO_PRINCIPAL}}
+        <a class="btn btn-sec escuro" href="{{LINK_ROTA}}" target="_blank" rel="noopener">Abrir no Google Maps</a>
+      </div>
+    </div>
+    <div class="mapa">
+      <iframe title="Mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="{{MAPA_EMBED}}"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>{{CTA_TITULO}}</h2>
+    {{BOTAO_PRINCIPAL}}
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="container rodape-in">
+    <div>
+      <strong>{{NOME}}</strong>
+      <p>{{ENDERECO}}</p>
+    </div>
+    <p class="credito">Site desenvolvido por <a href="https://instagram.com/jrdev.tecnologia" target="_blank" rel="noopener">JR Dev</a></p>
+  </div>
+</footer>
+
+{{BOTAO_FLUTUANTE}}
+</body>
+</html>

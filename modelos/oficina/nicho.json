@@ -1,0 +1,23 @@
+{
+  "nome": "Oficina mecânica",
+  "fontes": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap",
+  "heroTitulo": "Seu carro em boas mãos, do diagnóstico à entrega",
+  "heroSubtitulo": "Manutenção preventiva e corretiva com transparência no orçamento e serviço bem feito. Fale com a gente e agende uma avaliação.",
+  "sobreTitulo": "Confiança se constrói com serviço bem feito",
+  "sobreTexto": [
+    "Trabalhamos com diagnóstico preciso, orçamento explicado item por item e prazo combinado.",
+    "Nossa equipe cuida do seu veículo como se fosse nosso, para você rodar com segurança e tranquilidade."
+  ],
+  "menuServicos": "Serviços",
+  "servicosSobretitulo": "Especialidades",
+  "servicosTitulo": "O que fazemos pelo seu veículo",
+  "servicos": [
+    {"titulo": "Revisão e manutenção", "descricao": "Troca de óleo, filtros e itens de revisão para o carro rodar sempre bem."},
+    {"titulo": "Freios e suspensão", "descricao": "Pastilhas, discos, amortecedores e alinhamento para mais segurança."},
+    {"titulo": "Diagnóstico", "descricao": "Identificação de falhas com avaliação cuidadosa antes de qualquer troca."},
+    {"titulo": "Motor e arrefecimento", "descricao": "Correias, velas, radiador e reparos para evitar dor de cabeça na estrada."}
+  ],
+  "botaoTexto": "Pedir orçamento",
+  "mensagemWhatsapp": "Olá! Vi o site e gostaria de um orçamento para o meu veículo.",
+  "ctaTitulo": "Barulho estranho ou revisão atrasada? Fale com a gente."
+}

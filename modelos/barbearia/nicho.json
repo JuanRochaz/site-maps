@@ -1,0 +1,23 @@
+{
+  "nome": "Barbearia",
+  "fontes": "https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap",
+  "heroTitulo": "Estilo, precisão e aquele acabamento que faz diferença",
+  "heroSubtitulo": "Corte, barba e cuidado masculino feitos por quem entende do assunto. Agende seu horário e saia daqui na régua.",
+  "sobreTitulo": "Mais que um corte, um ritual",
+  "sobreTexto": [
+    "Aqui cada cliente é atendido com calma e atenção aos detalhes, do corte clássico ao degradê mais moderno.",
+    "Ambiente confortável, profissionais experientes e produtos de qualidade para você sair do jeito que gosta."
+  ],
+  "menuServicos": "Serviços",
+  "servicosSobretitulo": "O que fazemos",
+  "servicosTitulo": "Serviços",
+  "servicos": [
+    {"titulo": "Corte de cabelo", "descricao": "Do social ao degradê, com acabamento na navalha e finalização."},
+    {"titulo": "Barba", "descricao": "Modelagem, toalha quente e hidratação para uma barba alinhada."},
+    {"titulo": "Corte + barba", "descricao": "O combo completo para renovar o visual de uma vez só."},
+    {"titulo": "Sobrancelha e acabamentos", "descricao": "Pequenos detalhes que deixam o visual impecável."}
+  ],
+  "botaoTexto": "Agendar horário",
+  "mensagemWhatsapp": "Olá! Vi o site e gostaria de agendar um horário.",
+  "ctaTitulo": "Bora deixar o visual em dia?"
+}

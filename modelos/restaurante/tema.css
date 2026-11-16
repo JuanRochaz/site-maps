@@ -1,0 +1,14 @@
+/* Restaurante — creme quente, terracota, serifa clássica */
+:root{
+  --bg:#fbf6ee; --bg-alt:#f3e9da; --texto:#2b1d14; --texto-suave:#6b5646;
+  --primaria:#c4512d; --primaria-texto:#ffffff; --destaque:#c4512d;
+  --hero-bg:linear-gradient(135deg,#3a2216 0%,#7a3a1f 100%); --hero-texto:#fff; --hero-overlay:rgba(30,15,8,.6);
+  --borda:rgba(43,29,20,.12); --card:#fffdf9; --raio:18px; --raio-btn:999px;
+  --fonte-titulo:'Playfair Display',serif; --peso-titulo:800; --caixa-titulo:none; --espaco-titulo:-.01em;
+  --sombra:0 14px 36px rgba(60,30,10,.12);
+}
+.topo{background:rgba(251,246,238,.94)}
+.hero h1{font-style:italic}
+.card{text-align:center}
+.card-num{font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem}
+.cta-final{background:linear-gradient(135deg,#c4512d,#9e3c1e)}

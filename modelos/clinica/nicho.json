@@ -1,0 +1,23 @@
+{
+  "nome": "Clínica / saúde / estética",
+  "fontes": "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap",
+  "heroTitulo": "Cuidado de verdade, com atenção a cada detalhe",
+  "heroSubtitulo": "Atendimento humanizado, ambiente acolhedor e profissionais preparados para cuidar de você. Agende sua consulta.",
+  "sobreTitulo": "Saúde e bem-estar em um só lugar",
+  "sobreTexto": [
+    "Nosso compromisso é oferecer um atendimento próximo, explicando cada etapa e respeitando o seu tempo.",
+    "Estrutura confortável e uma equipe dedicada para você se sentir seguro do início ao fim."
+  ],
+  "menuServicos": "Atendimentos",
+  "servicosSobretitulo": "Atendimentos",
+  "servicosTitulo": "Como podemos cuidar de você",
+  "servicos": [
+    {"titulo": "Consultas e avaliações", "descricao": "Uma conversa cuidadosa para entender sua necessidade e indicar o melhor caminho."},
+    {"titulo": "Tratamentos", "descricao": "Procedimentos realizados com segurança, técnica e acompanhamento."},
+    {"titulo": "Acompanhamento", "descricao": "Retornos e orientações para que o resultado seja duradouro."},
+    {"titulo": "Agendamento fácil", "descricao": "Marque seu horário direto pelo WhatsApp, sem complicação."}
+  ],
+  "botaoTexto": "Agendar consulta",
+  "mensagemWhatsapp": "Olá! Vi o site e gostaria de agendar uma consulta.",
+  "ctaTitulo": "Dê o primeiro passo para se cuidar melhor."
+}

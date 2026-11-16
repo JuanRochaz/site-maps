@@ -1,0 +1,23 @@
+{
+  "nome": "Geral (escritórios, contabilidade, serviços)",
+  "fontes": "https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap",
+  "heroTitulo": "Soluções profissionais para você e para sua empresa",
+  "heroSubtitulo": "Atendimento próximo, experiência e responsabilidade para resolver o que você precisa. Fale com nossa equipe.",
+  "sobreTitulo": "Experiência a serviço dos nossos clientes",
+  "sobreTexto": [
+    "Atuamos com seriedade e transparência, acompanhando cada cliente de perto e com prazos cumpridos.",
+    "Nosso objetivo é simplificar a sua rotina para que você foque no que realmente importa."
+  ],
+  "menuServicos": "Serviços",
+  "servicosSobretitulo": "Serviços",
+  "servicosTitulo": "Como podemos ajudar",
+  "servicos": [
+    {"titulo": "Atendimento consultivo", "descricao": "Entendemos sua necessidade antes de propor qualquer solução."},
+    {"titulo": "Rotina em dia", "descricao": "Organização, prazos e obrigações acompanhados de perto."},
+    {"titulo": "Para empresas", "descricao": "Suporte a negócios de todos os tamanhos, do MEI à empresa estabelecida."},
+    {"titulo": "Para pessoas físicas", "descricao": "Orientação clara e atendimento personalizado."}
+  ],
+  "botaoTexto": "Falar com a equipe",
+  "mensagemWhatsapp": "Olá! Vi o site e gostaria de mais informações.",
+  "ctaTitulo": "Vamos conversar sobre o que você precisa?"
+}

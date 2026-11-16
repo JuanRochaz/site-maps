@@ -1,0 +1,11 @@
+/* Geral — corporativo, azul-marinho, limpo */
+:root{
+  --bg:#ffffff; --bg-alt:#f4f6fa; --texto:#0f1b2d; --texto-suave:#526075;
+  --primaria:#1f3a5f; --primaria-texto:#ffffff; --destaque:#2f6fdf;
+  --hero-bg:radial-gradient(circle at 80% 20%,#2f6fdf33 0,transparent 45%),linear-gradient(135deg,#0f1b2d 0%,#1f3a5f 100%);
+  --hero-texto:#fff; --hero-overlay:rgba(12,22,38,.72);
+  --borda:rgba(15,27,45,.09); --card:#fff; --raio:12px; --raio-btn:10px;
+  --fonte-titulo:'Manrope',sans-serif; --fonte-texto:'Manrope',system-ui,sans-serif;
+  --peso-titulo:800; --caixa-titulo:none; --espaco-titulo:-.02em;
+}
+.card-num{display:inline-block;padding:.2rem .6rem;border-radius:6px;background:#eaf1fd}
