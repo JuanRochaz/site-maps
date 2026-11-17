@@ -25,8 +25,12 @@ Siga exatamente estes passos (leia o CLAUDE.md do projeto antes):
 5. **Conferir**: abra `saida/<slug>/index.html` (ou descreva) e confira nome, telefone/WhatsApp, horários e endereço contra o dados.json.
 
 6. **Publicar** (perguntar antes ao Juan se pode publicar):
-   - `netlify sites:create --name <slug>-jrdev` (se o nome já existir, use `<slug>-jrdev-2`)
-   - `netlify deploy --prod --dir saida/<slug> --site <slug>-jrdev`
+   - `netlify sites:create --name <slug>-jrdev --disable-linking --json` (se o nome já existir, use `<slug>-jrdev-2`). Guarde o `id` do JSON.
+     O `--disable-linking` é obrigatório: sem ele a pasta fica "amarrada" ao primeiro site e o próximo deploy SOBRESCREVE esse site.
+   - `netlify deploy --prod --no-build --dir saida/<slug> --site <id> --json` (sempre pelo ID, nunca sem `--site`)
+   - A conta da JR Dev pode criar sites com "login da equipe" ligado (quem abre vê uma tela de login). Libere o site:
+     `netlify api updateSite --data '{"site_id":"<id>","body":{"sso_login":false}}'`
+   - Confira que o link abre para qualquer pessoa (status 200, não 401) antes de passar para o Juan.
    - Se o nome final do site mudou, atualize o link em `saida/<slug>/whatsapp.txt`.
 
 7. **Entregar ao Juan**: link publicado, nicho usado, um resumo do que foi coletado (nota, nº de avaliações, se tem WhatsApp) e o texto de `whatsapp.txt` pronto pra copiar. Ofereça gerar a proposta comercial com a skill de proposta da JR Dev.
