@@ -6,13 +6,14 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { registrar, verificar } from './uso.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MAX_FOTOS = 6;
 
 // ---------- utilidades ----------
-async function carregarEnv() {
+export async function carregarEnv() {
   try {
     const txt = await fs.readFile(path.join(RAIZ, '.env'), 'utf8');
     for (const linha of txt.split(/\r?\n/)) {
@@ -53,7 +54,9 @@ function lerLinkMaps(url) {
   return { nome, lat, lng };
 }
 
-async function places(endpoint, { method = 'GET', body, campos }) {
+// tipo: 'busca' | 'buscaId' | 'detalhes' — usado no contador de uso (scripts/uso.mjs)
+export async function places(endpoint, { method = 'GET', body, campos, tipo }) {
+  tipo ||= endpoint.startsWith('places:searchText') ? 'busca' : 'detalhes';
   const r = await fetch(`https://places.googleapis.com/v1/${endpoint}`, {
     method,
     headers: {
@@ -65,10 +68,11 @@ async function places(endpoint, { method = 'GET', body, campos }) {
   });
   const json = await r.json();
   if (!r.ok) throw new Error(`Places API ${r.status}: ${JSON.stringify(json.error || json)}`);
+  await registrar(tipo);
   return json;
 }
 
-function sugerirNicho(tipos = []) {
+export function sugerirNicho(tipos = []) {
   const t = tipos.join(' ');
   if (/barber|hair_care|hair_salon/.test(t)) return 'barbearia';
   if (/car_repair|auto_parts|car_wash|tire|car_dealer|motorcycle/.test(t)) return 'oficina';
@@ -77,7 +81,7 @@ function sugerirNicho(tipos = []) {
   return 'geral';
 }
 
-function whatsappDe(telNacional) {
+export function whatsappDe(telNacional) {
   if (!telNacional) return null;
   const d = telNacional.replace(/\D/g, '').replace(/^0/, '');
   // Celular BR: DDD (2) + 9 + 8 dígitos = 11 dígitos
@@ -92,8 +96,11 @@ async function main() {
     console.error('ERRO: defina GOOGLE_PLACES_API_KEY no arquivo .env'); process.exit(1);
   }
   const args = process.argv.slice(2);
-  let textQuery, lat, lng;
-  if (args[0] === '--busca') {
+  let textQuery, lat, lng, id;
+  if (args[0] === '--id') {
+    id = args[1];                                  // place id vindo do prospectar.mjs
+    if (!id) { console.error('Uso: node scripts/coletar.mjs --id <placeId>'); process.exit(1); }
+  } else if (args[0] === '--busca') {
     textQuery = args.slice(1).join(' ');
   } else if (args[0]) {
     const final = await resolverLink(args[0]);
@@ -101,19 +108,23 @@ async function main() {
     if (!info.nome) { console.error('Não consegui ler o nome no link:', final, '\nUse --busca "nome + cidade".'); process.exit(1); }
     textQuery = info.nome; lat = info.lat; lng = info.lng;
   } else {
-    console.error('Uso: node scripts/coletar.mjs "<link do Maps>"  |  --busca "nome cidade"'); process.exit(1);
+    console.error('Uso: node scripts/coletar.mjs "<link do Maps>"  |  --busca "nome cidade"  |  --id <placeId>'); process.exit(1);
   }
 
-  const busca = await places('places:searchText', {
-    method: 'POST',
-    campos: 'places.id,places.displayName,places.formattedAddress',
-    body: {
-      textQuery, languageCode: 'pt-BR', regionCode: 'BR', pageSize: 3,
-      ...(lat != null ? { locationBias: { circle: { center: { latitude: lat, longitude: lng }, radius: 800 } } } : {}),
-    },
-  });
-  if (!busca.places?.length) { console.error('Nenhuma empresa encontrada para:', textQuery); process.exit(1); }
-  const id = busca.places[0].id;
+  await verificar({ detalhes: 1, fotos: MAX_FOTOS });
+
+  if (!id) {
+    const busca = await places('places:searchText', {
+      method: 'POST', tipo: 'buscaId',
+      campos: 'places.id,places.displayName,places.formattedAddress',
+      body: {
+        textQuery, languageCode: 'pt-BR', regionCode: 'BR', pageSize: 3,
+        ...(lat != null ? { locationBias: { circle: { center: { latitude: lat, longitude: lng }, radius: 800 } } } : {}),
+      },
+    });
+    if (!busca.places?.length) { console.error('Nenhuma empresa encontrada para:', textQuery); process.exit(1); }
+    id = busca.places[0].id;
+  }
 
   const p = await places(`places/${id}?languageCode=pt-BR&regionCode=BR`, {
     campos: [
@@ -135,6 +146,7 @@ async function main() {
     try {
       const r = await fetch(`https://places.googleapis.com/v1/${f.name}/media?maxWidthPx=1600&key=${process.env.GOOGLE_PLACES_API_KEY}`);
       if (!r.ok) continue;
+      await registrar('fotos');
       const arq = `img/foto-${i + 1}.jpg`;
       await fs.writeFile(path.join(pasta, arq), Buffer.from(await r.arrayBuffer()));
       fotos.push(arq);
@@ -181,4 +193,7 @@ async function main() {
   if (dados.siteAtual) console.log(`  ATENÇÃO: a empresa já tem site cadastrado: ${dados.siteAtual}`);
 }
 
-main().catch(e => { console.error('ERRO:', e.message); process.exit(1); });
+// Só roda quando chamado direto (o prospectar.mjs importa as funções acima)
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch(e => { console.error('ERRO:', e.message); process.exit(1); });
+}

@@ -23,12 +23,24 @@ Abra o Claude Code na pasta (`claude`) e rode:
 /site-maps "Barbearia do Zé Sertãozinho" barbearia
 ```
 
+Prospecção de uma região inteira (lista quem não tem site e gera as demos):
+```
+/prospectar "Sertãozinho SP"
+/prospectar "Ribeirão Preto SP" barbearia,oficina 10
+```
+
 Ou manualmente:
+```
+node scripts/prospectar.mjs "Sertãozinho SP" --nichos barbearia,oficina --min-avaliacoes 10
+node scripts/coletar.mjs --id <placeId da lista>
+```
 ```
 node scripts/coletar.mjs "<link>"
 node scripts/gerar.mjs <slug> --nicho oficina
 netlify sites:create --name <slug>-jrdev
 netlify deploy --prod --dir saida/<slug> --site <slug>-jrdev
 ```
+
+Uso da cota grátis do Google no mês: `node scripts/uso.mjs`. Se um script parar com "LIMITE", ele não consultou nada; para rodar mesmo assim, repita com `--confirmar`.
 
 Quando o cliente fechar: `node scripts/gerar.mjs <slug> --final` (tira a faixa de demonstração e o noindex).

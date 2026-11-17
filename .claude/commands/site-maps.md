@@ -7,6 +7,8 @@ Gere um site de demonstração para a empresa: $ARGUMENTS
 
 Siga exatamente estes passos (leia o CLAUDE.md do projeto antes):
 
+0. Se o `coletar.mjs` parar com "LIMITE" (código 2), mostre a mensagem ao Juan e só rode de novo com `--confirmar` se ele autorizar.
+
 1. **Coleta**
    - Se o argumento for um link: `node scripts/coletar.mjs "<link>"`
    - Se for texto (nome + cidade): `node scripts/coletar.mjs --busca "<texto>"`
